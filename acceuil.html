@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AA</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		textarea{
+			resize: none;
+		}
+	</style>
+	<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+	<h1>AJOUT PRODUIT</h1>
+<form method="post" action="ajouterProduit.php">
+
+<label for="reference">Reference : </label>
+<input type="text" name="reference" id="reference"><br/>
+
+
+<label for="nom"> Titre :</label>
+<input type="text" name="nom" id="nom"> <br/>
+
+
+<label for="prix"> Prix :</label>
+<input type="number" name="prix" id="prix" placeholder="Prix en DNT"> DNT <br/>
+
+
+<label for="photo"> URL Photo :</label>
+<input type="file" name="photo" id="photo"> <br/>
+
+
+<label for="description">Description produit :</label>
+<textarea name="description" id="description"></textarea> <br/>
+
+
+<label>Type de produit :</label> <br/>
+<input type="checkbox" name="sucre" checked="not">Sucrée <br/>
+<input type="checkbox" name="sale">Salée <br/>
+<input type="checkbox" name="gateau">Gateaux <br/>
+
+<input type="submit">
+</form>
+<hr/><hr/><hr/>
+
+
+
+<h1>SUPPRESSION PRODUIT</h1>
+<form method="post" action="supprimerProduit.php">
+	<input type="text" name="supp">
+	<select name="with">
+		<option>Please choose ! </option>
+		<option value="Reference">Reference</option>
+		<option value="Nom">Nom</option>
+		<option value="Prix">Prix</option>
+		<option value="Type">Type</option>
+
+	</select>
+	<input type="submit" value="Delete">
+</form>
+
+
+<hr/><hr/><hr/>
+
+
+
+<h1>MODIFICATION PRODUIT</h1>
+<form method="post" action="modifierProduit.php">
+	Vous allez modifier :
+	<select name="modwith" onchange="ModifSelect()" id="selectmodif">
+		<option>Please choose ! </option>
+		<option value="Reference">Reference</option>
+		<option value="Nom">Nom</option>
+		<option value="Prix">Prix</option>
+		<option value="Type">Type</option>
+		<option value="Photo">Photo</option>
+
+	</select>
+	<br/>
+	Reference du produit à modifier : <input type="text" name="ref"/> <br/>
+	<div id="newvaldiv">Nouvelle valeure : <input type="text" name="new" id="newval" /></div> <br/>
+	<input type="submit" value="Modifier"/>
+
+</form>
+<hr/><hr/><hr/>
+
+
+
+<h1>AJOUT PRODUIT EN SOLDE</h1>
+<form method="post" action="ajouterProduitensolde.php">
+	<label for="referencesolde">Reference : </label>
+<input type="text" name="referencesolde" id="referencesolde"><br/>
+<label for="remise">La remise (en %) : </label>
+<input type="text" name="remise" id="remise"><br/>
+<input type="submit">
+</form>
+
+</body>
+</html>
